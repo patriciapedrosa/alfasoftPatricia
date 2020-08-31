@@ -74,10 +74,10 @@ class ContactController extends Controller
 
     public function delete($id)
     {
-        Contact::where('id',$id)->update([
-            'deleted'=>1
-        ]);
-
+        $contact = Contact::find($id);
+        $contact->deleted = 1;
+        $contact->save();
+    
         return redirect()
         ->route('contact.index')
         ->with('success', 'Contato eliminado com sucesso');
