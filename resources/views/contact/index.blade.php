@@ -33,7 +33,7 @@
                                  <form action="{{ route('contact.delete',$contact->id) }}" method="post" class="form-group">
                                         {{csrf_field()}}
                                         <div class="form-group">
-                                            <button type="submit" style="width:100;height:100" class="btn-xs btn-danger" name="ok">Eliminar</button>
+                                            <button type="submit" style="width:100;height:100" class="btn btn-xs btn-danger" name="ok">Eliminar</button>
                                         </div>
                                         </td>
                                     </form>
