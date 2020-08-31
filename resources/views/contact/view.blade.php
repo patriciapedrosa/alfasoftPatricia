@@ -2,8 +2,10 @@
 @section('content')
 
 <div class="container">
-    Nome: {{$contact->name}}
-    Contato: {{$contact->contact }}
-    Email: {{$contact->email}}
+   <b> Nome:</b> {{$contact->name}}
+   <br>
+   <b> Contato:</b> {{$contact->contact }}
+   <br>
+    <b>Email: </b>{{$contact->email}}
 </div>
 @endsection
