@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Contact;
 use App\Http\Resources\Contact as ContactResource;
 
-use App\Http\Requests\StoreContactRequest; 
+use App\Http\Requests\StoreEditContactRequest; 
 
 class ContactController extends Controller
 {
@@ -28,15 +28,16 @@ class ContactController extends Controller
     }
 
 
-    public function edit(Contact $contact)
+    public function edit($contact_id)
     {
+        $contact = Contact::findOrFail($contact_id);
         return view('contact.edit',compact('contact'));
     }
 
-     public function update(Request $request, $id)
+     public function update(StoreEditContactRequest $request, $id)
     {
         
-        Contact::where('id',$id)->update([
+        Contact::findOrFail($id)->update([
             'name' => $request->input('name'), 
             'contact' => $request->input('contact'),
             'email' => $request->input('email')
