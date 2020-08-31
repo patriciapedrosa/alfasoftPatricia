@@ -3,19 +3,33 @@
 
 <div class="container">
     "ghgsdi.rogjKPRªel"
-    <!-- <form action="{{route('device.storeEdit', $device->id)}}" method="post" class="form-group" enctype="multipart/form-data">
+     <form action="{{route('device.storeEdit', $device->id)}}" method="post" class="form-group" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="location">Location</label>
+            <label for="name">Nome</label>
             <input
             type="text" class="form-control"
-            name="location" id="location"
-            placeholder="location" value="{{old('location', $device->location)}}" />
+            name="name" id="name"
+            placeholder="name" value="{{old('name', $contact->name)}}" />
+        </div>
+        <div class="form-group">
+            <label for="contact">Telefone</label>
+            <input
+            type="text" class="form-control"
+            name="contact" id="contact"
+            placeholder="contact" value="{{old('contact', $contact->contact)}}" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+            type="text" class="form-control"
+            name="email" id="email"
+            placeholder="email" value="{{old('email', $contact->email)}}" />
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-success" id="ok" name="ok">Save</button>
-            <a class="btn btn-danger" href="{{route('home')}}" id="cancel">Cancel</a>
+            <a class="btn btn-danger" href="{{route('index')}}" id="cancel">Cancel</a>
         </div>
         {{csrf_field()}}
-    </form> -->
+    </form>
 </div>
 @endsection

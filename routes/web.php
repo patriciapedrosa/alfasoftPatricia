@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,17 +21,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','ContactController@index')->name('index');
 
 
-Route::get('view/{id}','ContactController@view')->name('view');
+Route::get('view/{id}','ContactController@view')->name('contact.view');
 
 
+/*Route::get('view/{id}', function()
+{
+    return 'Hello World';
+})->name('contact.view');
 
+*/
 Route::get('add','ContactController@create')->name('contact.add');
 
 Route::post('store','ContactController@store')->name('contact.store');
 
 
 
-Route::get('edit/{id}','ContactController@edit')->name('edit');
+Route::get('edit/{id}','ContactController@edit')->name('contact.edit');
 
 Route::post('update/{contact}', 'ContactController@update')->name('contact.update');
 

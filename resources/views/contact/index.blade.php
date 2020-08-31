@@ -29,17 +29,21 @@
                             <td>{{$contact->name}}</td>
                             <td>{{$contact->contact }}</td>
                             <td>{{$contact->email}}</td>
-                            <td><form action="{{ route('contact.delete',$contact->id) }}" method="POST" accept-charset="utf-8">
+                            <td><a class="btn btn-xs btn-danger" href="{{ route('contact.delete',$contact->id) }}" >Eliminar</a>
+
+
+<!-- 
+                                <form action="{{ route('contact.delete',$contact->id) }}" method="POST" accept-charset="utf-8">
                                 {{method_field('delete')}}
                                 {{csrf_field()}}
                                 <button type="submit" class="btn btn-xs btn-danger">Remover</button>
-                            </form>
+                            </form> -->
                         </td>
                       
-                            <td><a class="btn btn-xs btn-primary" href="{{ route('edit',$contact->id) }}">Editar</a></td>
+                            <td><a class="btn btn-xs btn-primary" href="{{ route('contact.edit',$contact->id) }}">Editar</a></td>
 
 
-                            <td><a class="btn btn-xs btn-primary" href="{{ route('view',$contact->id) }}">Ver</a></td>
+                            <td><a class="btn btn-xs btn-primary" href="{{ route('contact.view',$contact->id) }}">Ver</a></td>
                       
                         </tr>
                         @endforeach
