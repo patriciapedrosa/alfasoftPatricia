@@ -72,7 +72,7 @@ class ContactController extends Controller
         $contact->save();
 
         return redirect()
-            ->route('index')->with('success', 'Contato adicionado com sucesso');
+            ->route('index', compact('contact'))->with('success', 'Contato adicionado com sucesso');
 
 
 /*
