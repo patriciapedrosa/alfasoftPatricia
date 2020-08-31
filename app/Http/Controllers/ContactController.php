@@ -36,7 +36,8 @@ class ContactController extends Controller
 
      public function update(StoreEditContactRequest $request, $id)
     {
-        
+        var_dump($request);
+        var_dump($id);die;
         Contact::findOrFail($id)->update([
             'name' => $request->input('name'), 
             'contact' => $request->input('contact'),
@@ -61,6 +62,7 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
+        var_dump($request);die;
 
         $contact = new Contact();
         $validated = $this->validate($request,[

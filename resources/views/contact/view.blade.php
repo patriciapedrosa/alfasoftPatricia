@@ -10,7 +10,7 @@
 
     <div>
         <a class="btn btn-default" href="{{route('index')}}" id="voltar">Voltar</a>
-
+        <a class="btn btn-xs btn-primary" href="{{ route('contact.edit',$contact->id) }}">Editar</a>
          <form action="{{ route('contact.delete',$contact->id) }}" method="post" class="form-group">
                                         {{csrf_field()}}
                                         <div class="form-group">
@@ -19,7 +19,7 @@
                                         </div>
                                     </form>
                                     
-                                    <a class="btn btn-xs btn-primary" href="{{ route('contact.edit',$contact->id) }}">Editar</a>
+                                    
 
     </div>
 
