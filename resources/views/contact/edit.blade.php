@@ -2,7 +2,6 @@
 @section('content')
 
 <div class="container">
-    "ghgsdi.rogjKPRªel"
      <form action="{{route('contact.update', $contact)}}" method="post" class="form-group" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Nome</label>
