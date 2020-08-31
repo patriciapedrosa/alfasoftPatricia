@@ -60,6 +60,7 @@ class ContactController extends Controller
 
     public function store(StoreContactRequest $request)
     {
+        var_dump($request);die;
         $contact = new Contact();
         $contact->fill($request->all());
         $contact->save();
