@@ -10,11 +10,11 @@
     <div class="row">
       
    
-    <div class="col-4">
+    <div class="col-6">
         <a class="btn btn-default" href="{{route('index')}}" id="voltar">Voltar</a>
         <a class="btn btn-xs btn-primary" href="{{ route('contact.edit',$contact->id) }}">Editar</a>
         </div>
-        <div class="col-4">
+        <div class="col-6">
           <form action="{{ route('contact.delete',$contact->id) }}" method="post" class="form-group">
                                         {{csrf_field()}}
                                         <div class="form-group">
