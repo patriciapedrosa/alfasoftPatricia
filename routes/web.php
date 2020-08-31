@@ -24,12 +24,6 @@ Route::get('/','ContactController@index')->name('index');
 Route::get('view/{id}','ContactController@view')->name('contact.view');
 
 
-/*Route::get('view/{id}', function()
-{
-    return 'Hello World';
-})->name('contact.view');
-
-*/
 Route::get('add','ContactController@create')->name('contact.add');
 
 Route::post('store','ContactController@store')->name('contact.store');

@@ -29,7 +29,7 @@ class ContactController extends Controller
     public function edit(Contact $contact)
     {
 
-    	var_dump("hdsgjk");die;
+    	//var_dump("hdsgjk");die;
         return view('contact.edit',compact('contact'));
     }
 
@@ -37,7 +37,7 @@ class ContactController extends Controller
 
     public function create()
     {
-    	var_dump("hgsefkjl");die;
+    	//var_dump("hgsefkjl");die;
     	 /*$request->validate([
                 'table_number' => 'required|integer|unique:tables'
             ]);*/
