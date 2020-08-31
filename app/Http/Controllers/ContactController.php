@@ -44,7 +44,7 @@ class ContactController extends Controller
         ]);
 
         return redirect()
-        ->route('contact.index')
+        ->route('index')
         ->with('success', 'Dispositivo editado com sucesso');
     }
 
@@ -66,7 +66,7 @@ class ContactController extends Controller
         $contact->deleted = 0;
         $contact->save();
         return redirect()
-        ->route('contact.index')
+        ->route('index')
         ->with('success', 'Contato adicionado com sucesso');
     }
 
@@ -79,7 +79,7 @@ class ContactController extends Controller
         $contact->save();
     
         return redirect()
-        ->route('contact.index')
+        ->route('index')
         ->with('success', 'Contato eliminado com sucesso');
     }
 
