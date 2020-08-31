@@ -11,13 +11,14 @@ use App\Http\Requests\StoreContactRequest;
 class ContactController extends Controller
 {
 
-	 public function index()
+	public function index()
     {
         $contacts = Contact::orderBy('id')->paginate(10);
         return view('contact.index', compact('contacts'));
     }
 
     public function viewContact($id){
+        var_dump(Contact()->isEliminado());die;
     	$contact = Contact::find($id);
 
     	return view('contact.view', compact('contact'));
@@ -26,34 +27,17 @@ class ContactController extends Controller
 
     public function edit(Contact $contact)
     {
-
-    	//var_dump("hdsgjk");die;
         return view('contact.edit',compact('contact'));
     }
 
-
-
-    public function create()
-    {
-    	//var_dump("hgsefkjl");die;
-    	 /*$request->validate([
-                'table_number' => 'required|integer|unique:tables'
-            ]);*/
-        $contact = new Contact();
-        return view('contact.add', compact('contact'));
-    }
-
-
-
-
-
-
-    public function update(Request $request, $id)
+     public function update(Request $request, $id)
     {
         
         Contact::where('id',$id)->update([
-            /*'location' => $request->input('location'), 
-            'updated_at' => Carbon::now()*/
+            'name' => $request->input('name'), 
+            'contact' => $request->input('contact'),
+            'email' => $request->input('email')
+            
         ]);
 
         return redirect()
@@ -61,28 +45,37 @@ class ContactController extends Controller
         ->with('success', 'Dispositivo editado com sucesso');
     }
 
+
+
+
+    public function create()
+    {
+        $contact = new Contact();
+        return view('contact.add', compact('contact'));
+    }
+
+
     public function store(StoreContactRequest $request)
     {
-        //dd($request);
         $contact = new Contact();
         $contact->fill($request->all());
         $contact->save();
         return redirect()
         ->route('contact.index')
-        ->with('success', 'Contato added successfully');
+        ->with('success', 'Contato adicionado com sucesso');
     }
 
 
 
     public function delete($id)
     {
-    	var_dump($id);die;
-        $contato = Contact::findOrFail($id);
-        $contato->deleted == 1;
-        $contato->save();
-        /*return redirect()
-            ->route('sensor.index', compact('thing_id'))
-            ->with('success', 'Sensor removido com sucesso');*/
+        Contact::where('id',$id)->update([
+            'deleted'=>1
+        ]);
+
+        return redirect()
+        ->route('contact.index')
+        ->with('success', 'Contato eliminado com sucesso');
     }
 
 }

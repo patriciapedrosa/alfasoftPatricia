@@ -10,4 +10,11 @@ class Contact extends Model
         'id', 'name', 'email', 'contact', 'deleted',
     ];
 
+
+    public function isEliminado()
+    {
+        return $this->deleted == 1;
+    }
+    
+
 }
