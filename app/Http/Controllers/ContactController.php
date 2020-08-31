@@ -63,6 +63,7 @@ class ContactController extends Controller
         var_dump($request);die;
         $contact = new Contact();
         $contact->fill($request->all());
+        $contact->deleted = 0;
         $contact->save();
         return redirect()
         ->route('contact.index')

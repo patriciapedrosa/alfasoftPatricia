@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-    <?php  var_dump($contact);die;?>
+    
     <form action="{{route('contact.store', $contact)}}" method="post" class="form-group" enctype="multipart/form-data">
        <div class="form-group">
             <label for="name">Nome</label>
