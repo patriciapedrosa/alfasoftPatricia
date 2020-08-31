@@ -8,20 +8,24 @@
    <br>
     <b>Email: </b>{{$contact->email}}
 
-    <div>
+    <div class="col-xs-4">
         <a class="btn btn-default" href="{{route('index')}}" id="voltar">Voltar</a>
         <a class="btn btn-xs btn-primary" href="{{ route('contact.edit',$contact->id) }}">Editar</a>
-         <form action="{{ route('contact.delete',$contact->id) }}" method="post" class="form-group">
+        </div>
+        <div class="col-xs-4">
+          <form action="{{ route('contact.delete',$contact->id) }}" method="post" class="form-group">
                                         {{csrf_field()}}
                                         <div class="form-group">
                                             <button type="submit" style="width:100;height:100" class="btn btn-xs btn-danger" name="ok">Eliminar</button>
                                         </div>
                                         </div>
                                     </form>
+        </div>
+         
                                     
                                     
 
-    </div>
+    
 
 </div>
 @endsection
