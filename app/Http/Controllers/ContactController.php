@@ -34,24 +34,16 @@ class ContactController extends Controller
         return view('contact.edit',compact('contact'));
     }
 
-     public function update(Request $request, $id)
+     public function update(StoreEditContactRequest $request, $id)
     {
 
-        $validated =  $request->validate([
-                'name' => 'required|string|max:500|min:5',
-                'email' => 'required|string|unique:contacts|email',
-                'contact' => 'required|integer|unique:contacts|digits:9'
-            ]);
-         $contact->fill($request->all());
-        $contact->save();
-
-       /* Contact::findOrFail($id)->update([
+        Contact::findOrFail($id)->update([
             'name' => $request->input('name'), 
             'contact' => $request->input('contact'),
             'email' => $request->input('email')
             
         ]);
-*/
+
         return redirect()
         ->route('index')
         ->with('success', 'Contato editado com sucesso');
