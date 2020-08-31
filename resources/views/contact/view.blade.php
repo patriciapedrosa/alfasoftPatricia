@@ -7,5 +7,9 @@
    <b> Contato:</b> {{$contact->contact }}
    <br>
     <b>Email: </b>{{$contact->email}}
+
+    <div>
+        <a class="btn btn-default" href="{{route('index')}}" id="voltar">Voltar</a>
+    </div>
 </div>
 @endsection
