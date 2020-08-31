@@ -29,15 +29,14 @@
                             <td>{{$contact->name}}</td>
                             <td>{{$contact->contact }}</td>
                             <td>{{$contact->email}}</td>
-                            <td><a class="btn btn-xs btn-danger" href="{{ route('contact.delete',$contact->id) }}" >Eliminar</a>
-
-
-<!-- 
-                                <form action="{{ route('contact.delete',$contact->id) }}" method="POST" accept-charset="utf-8">
-                                {{method_field('delete')}}
-                                {{csrf_field()}}
-                                <button type="submit" class="btn btn-xs btn-danger">Remover</button>
-                            </form> -->
+                            <td>
+                                 <form action="{{ route('contact.delete',$contact->id) }}" method="post" class="form-group">
+                                        {{csrf_field()}}
+                                        <div class="form-group">
+                                            <button type="submit" style="width:100;height:100" class="btn-xs btn-danger" name="ok">Eliminar</button>
+                                        </div>
+                                        </td>
+                                    </form>
                         </td>
                       
                             <td><a class="btn btn-xs btn-primary" href="{{ route('contact.edit',$contact->id) }}">Editar</a></td>
