@@ -7,12 +7,14 @@
    <b> Contato:</b> {{$contact->contact }}
    <br>
     <b>Email: </b>{{$contact->email}}
-
-    <div class="col-xs-4">
+    <div class="row">
+      
+   
+    <div class="col-4">
         <a class="btn btn-default" href="{{route('index')}}" id="voltar">Voltar</a>
         <a class="btn btn-xs btn-primary" href="{{ route('contact.edit',$contact->id) }}">Editar</a>
         </div>
-        <div class="col-xs-4">
+        <div class="col-4">
           <form action="{{ route('contact.delete',$contact->id) }}" method="post" class="form-group">
                                         {{csrf_field()}}
                                         <div class="form-group">
@@ -24,7 +26,7 @@
          
                                     
                                     
-
+ </div>
     
 
 </div>
