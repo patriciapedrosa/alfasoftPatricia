@@ -19,7 +19,6 @@ class ContactController extends Controller
 
     public function viewContact($id){
     	$contact = Contact::find($id);
-        var_dump($contact->deleted);die;
         if($contact->deleted == 1){
             return view('/');
         }else{
