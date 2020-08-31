@@ -32,7 +32,7 @@ Route::post('store','ContactController@store')->name('contact.store');
 
 Route::get('edit/{id}','ContactController@edit')->name('contact.edit');
 
-Route::post('update/{contact}', 'ContactController@update')->name('contact.update');
+Route::post('update/{id}', 'ContactController@update')->name('contact.update');
 
 
 
