@@ -58,8 +58,25 @@ class ContactController extends Controller
     }
 
 
-    public function store(StoreContactRequest $request)
+    public function store(Request $request)
     {
+
+        $contact = new Contact();
+        $validated = $this->validate($request,[
+            'name' => 'required|string|max:500',
+            'email' => 'required|string|email',
+            'contact' => 'required|integer|max:9'
+        ]);
+        $contact->fill($validated);
+        $contact->deleted = 0;
+        $contact->save();
+
+        return redirect()
+            ->route('index')->with('success', 'Contato adicionado com sucesso');
+
+
+/*
+
         var_dump($request);die;
         $contact = new Contact();
         $contact->fill($request->all());
@@ -67,7 +84,7 @@ class ContactController extends Controller
         $contact->save();
         return redirect()
         ->route('index')
-        ->with('success', 'Contato adicionado com sucesso');
+        ->with('success', 'Contato adicionado com sucesso');*/
     }
 
 
