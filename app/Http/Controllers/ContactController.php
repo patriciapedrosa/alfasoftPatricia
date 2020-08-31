@@ -63,8 +63,8 @@ class ContactController extends Controller
     {
         $validated =  $request->validate([
                 'name' => 'required|string|max:500|min:5',
-                'email' => 'required|string|unique:contacts|email',
-                'contact' => 'required|integer|unique:contacts|digits:9'
+                'email' => 'required|string|unique:contacts,email,deleted,0|email',
+                'contact' => 'required|integer|unique:contacts,contact,deleted,0|digits:9'
             ]);
 
         $contact = new Contact();
