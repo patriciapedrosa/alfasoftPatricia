@@ -21,7 +21,7 @@
 Route::get('/','ContactController@index')->name('index');
 
 
-Route::get('view/{id}','ContactController@view')->name('contact.view');
+Route::get('view/{id}','ContactController@viewContact')->name('contact.view');
 
 
 Route::get('add','ContactController@create')->name('contact.add');

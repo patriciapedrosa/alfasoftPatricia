@@ -17,12 +17,10 @@ class ContactController extends Controller
         return view('contact.index', compact('contacts'));
     }
 
-    public function view($id){
+    public function viewContact($id){
     	$contact = Contact::find($id);
 
-        return View::make('contact.view', array('contact' => $contact));
-
-    	//return view('contact.view');
+    	return view('contact.view', compact('contact'));
     }
 
 
