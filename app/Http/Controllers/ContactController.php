@@ -20,7 +20,7 @@ class ContactController extends Controller
     public function viewContact($id){
     	$contact = Contact::find($id);
         if($contact->deleted == 1){
-            return view('/');
+            return abort(404);
         }else{
             return view('contact.view', compact('contact'));
         }
