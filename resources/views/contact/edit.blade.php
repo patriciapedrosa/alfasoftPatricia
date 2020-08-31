@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-     <form action="{{route('contact.update', $contact)}}" method="post" class="form-group" enctype="multipart/form-data">
+     <form action="{{route('contact.update', $contact->id)}}" method="post" class="form-group" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Nome</label>
             <input
