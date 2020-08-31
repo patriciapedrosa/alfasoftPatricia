@@ -62,7 +62,7 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        var_dump($request);die;
+        
 
         $contact = new Contact();
         $validated = $this->validate($request,[
@@ -70,10 +70,11 @@ class ContactController extends Controller
             'email' => 'required|string|email',
             'contact' => 'required|integer|max:9'
         ]);
+
         $contact->fill($validated);
         $contact->deleted = 0;
         $contact->save();
-
+        var_dump($contact);die;
         return redirect()
             ->route('index', compact('contact'))->with('success', 'Contato adicionado com sucesso');
 
