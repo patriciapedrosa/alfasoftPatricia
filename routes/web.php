@@ -16,4 +16,25 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/','ContactController@index')->name('index');;
+Route::get('/','ContactController@index')->name('index');
+
+
+
+Route::get('/add','ContactController@create')->name('contact.add');
+
+Route::post('/storeContact','ContactController@store')->name('contact.store');
+
+
+
+
+
+Route::get('/{contact}/edit','ContactController@create')->name('contact.edit');
+
+Route::post('/{contact}/storeEdit', 'ContactController@update')->name('contact.storeEdit');
+
+
+
+
+Route::post('{device}/delete')->name('contact.delete');
+
+
