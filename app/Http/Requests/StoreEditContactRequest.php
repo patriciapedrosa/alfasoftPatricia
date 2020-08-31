@@ -24,11 +24,11 @@ class StoreEditContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:500|min:5',
-            'email' => 'required|string|unique:contacts,'.$this->route()->getParameter('id').'|email',
-            'contact' => 'required|integer|unique:contacts,'.$this->route()->getParameter('id').'|digits:9',
 
-          /*   'email'=>'email|unique:users,email,'.$this->route()->getParameter('id').',database_id'*/
+            'name' => 'required|string|max:500|min:5',
+            'email' => 'required|string|unique:contacts,email,'.$id.',id|email',
+            'contact' => 'required|integer|unique:contacts,contact,'.$id.',id|digits:9',
+
         ];
     }
 }
