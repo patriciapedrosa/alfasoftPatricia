@@ -70,11 +70,12 @@ class ContactController extends Controller
             'email' => 'required|string|email',
             'contact' => 'required|integer|max:9'
         ]);
+        var_dump($validated);die;
 
         $contact->fill($validated);
         $contact->deleted = 0;
         $contact->save();
-        var_dump($contact);die;
+
         return redirect()
             ->route('index', compact('contact'))->with('success', 'Contato adicionado com sucesso');
 
