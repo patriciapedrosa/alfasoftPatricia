@@ -62,10 +62,14 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        
+        $request->validate([
+                'name' => 'required|string|max:500',
+            'email' => 'required|string|email',
+            'contact' => 'required|integer|max:9'
+            ]);
 
         $contact = new Contact();
-        var_dump($contact);
+        /*var_dump($contact);
         var_dump($this->validate($request,[
             'name' => 'required|string|max:500',
             'email' => 'required|string|email',
@@ -76,12 +80,14 @@ class ContactController extends Controller
             'name' => 'required|string|max:500',
             'email' => 'required|string|email',
             'contact' => 'required|integer|max:9'
-        ]);
+        ]);*/
         
 
-        $contact->fill($validated);
+        $contact->fill($request->all());
         $contact->deleted = 0;
         $contact->save();
+
+        /*return response()->json(new UserResource($user), 201);*/
 
         return redirect()
             ->route('index', compact('contact'))->with('success', 'Contato adicionado com sucesso');
