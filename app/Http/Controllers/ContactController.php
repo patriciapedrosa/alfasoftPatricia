@@ -41,7 +41,7 @@ class ContactController extends Controller
     	 /*$request->validate([
                 'table_number' => 'required|integer|unique:tables'
             ]);*/
-        $contato = new Contact();
+        $contact = new Contact();
         return view('contact.add', compact('contact'));
     }
 
