@@ -1,4 +1,4 @@
-    @extends('layouts.app');
+<!--     @extends('layouts.app');
     @section('content');
     <div class="container">
         <div class="row justify-content-center">
@@ -28,9 +28,7 @@
                             <td>{{$contact->name}}</td>
                             <td>{{$contact->contact }}</td>
                             <td>{{$contact->email}}</td>
-                            <td><!-- <a class="btn btn-xs btn-info" href="{{ route('contact.onOff',$contact->id) }}" >Ligar/Desligar</a> --></td>
-                           
-                            <td><a class="btn btn-xs btn-primary" href="{{ route('contact.edit',$contact->id) }}">Editar</a></td>
+                            <td>
                       
                         </tr>
                         @endforeach
@@ -41,4 +39,4 @@
                     @else 
                     <h3>Não foram encontrados dispositivos</h3>
                     @endif
-                    @endsection
+                    @endsection -->

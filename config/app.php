@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Contatos'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://patricia.cp02.alfasoft.pt/laravel'),
+    'url' => env('APP_URL', 'https://patricia.cp02.alfasoft.pt/alfasoftPatricia/public/'),
 
     'asset_url' => env('ASSET_URL', null),
 
