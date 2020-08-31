@@ -47,7 +47,7 @@ class ContactController extends Controller
 
         return redirect()
         ->route('index')
-        ->with('success', 'Dispositivo editado com sucesso');
+        ->with('success', 'Contato editado com sucesso');
     }
 
 
@@ -62,10 +62,10 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-                'name' => 'required|string|max:500',
-            'email' => 'required|string|email',
-            'contact' => 'required|integer|max:9'
+        $validated =  $request->validate([
+                'name' => 'required|string|max:500|min:5',
+            'email' => 'required|string|unique:contacts|email',
+            'contact' => 'required|integer|unique:contacts|digits:9'
             ]);
 
         var_dump($request);

@@ -24,9 +24,9 @@ class StoreEditContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:500',
-            'email' => 'required|string|email',
-            'contact' => 'required|integer|max:9'
+            'name' => 'required|string|max:500|min:5',
+            'email' => 'required|string|unique:contacts|email',
+            'contact' => 'required|integer|unique:contacts|digits:9'
         ];
     }
 }
