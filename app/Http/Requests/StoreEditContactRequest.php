@@ -26,8 +26,8 @@ class StoreEditContactRequest extends FormRequest
         return [
 
             'name' => 'required|string|max:500|min:5',
-            'email' => 'required|string|unique:contacts,email,'.$id.',id|email',
-            'contact' => 'required|integer|unique:contacts,contact,'.$id.',id|digits:9',
+            'email' => 'required|string|unique:contacts,email,'.$this->id.',id|email',
+            'contact' => 'required|integer|unique:contacts,contact,'.$this->id.',id|digits:9',
 
         ];
     }
