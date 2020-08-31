@@ -66,6 +66,11 @@ class ContactController extends Controller
 
         $contact = new Contact();
         var_dump($contact);
+        var_dump($this->validate($request,[
+            'name' => 'required|string|max:500',
+            'email' => 'required|string|email',
+            'contact' => 'required|integer|max:9'
+        ]));
         die;
         $validated = $this->validate($request,[
             'name' => 'required|string|max:500',
